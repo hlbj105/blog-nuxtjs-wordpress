@@ -4,12 +4,12 @@
       <li class="list">共<span class="mark">{{ totalPage }}</span>条关于“<span class="mark">{{ $route.query.s }}</span>”的文章</li>
     </ul>
     <article class="article-list" v-for="item in articleList" :key="item.key">
-      <nuxt-link :to="{ name: 'details-id', params: { id: item.id } }" class="thumbnail-wrap">
+      <nuxt-link :to="{ name: 'id', params: { id: item.id } }" class="thumbnail-wrap">
         <img :src="item.articleInfor.thumbnail" class="thumbnail" alt="">
       </nuxt-link>
       <div class="list-content">
         <h2 class="title">
-          <nuxt-link :to="{ name: 'details-id', params: { id: item.id } }" v-html="item.title.rendered"></nuxt-link>
+          <nuxt-link :to="{ name: 'id', params: { id: item.id } }" v-html="item.title.rendered"></nuxt-link>
         </h2>
         <p class="summary">{{ item.articleInfor.summary }}</p>
         <div class="opeartion">
@@ -19,7 +19,7 @@
             <span><x-icon type="icon-message"></x-icon>{{ item.articleInfor.commentCount }}</span>
             <span><x-icon type="icon-good"></x-icon>{{ item.articleInfor.xmLike.very_good }}</span>
           </div>
-          <nuxt-link class="details-btn" :to="{ name: 'details-id', params: { id: item.id } }">阅读详情</nuxt-link>
+          <nuxt-link class="details-btn" :to="{ name: 'id', params: { id: item.id } }">阅读详情</nuxt-link>
         </div>
       </div>
     </article>

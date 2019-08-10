@@ -78,11 +78,11 @@
       <div class="relative-link-wrap">
         <div class="prev">
           <p v-if="detail.articleInfor.prevLink === ''">已是第一篇文章！</p>
-          <p v-else>上一篇：<nuxt-link :to="{ name: 'details-id', params: { id: detail.articleInfor.prevLink.ID } }">{{ detail.articleInfor.prevLink.post_title }}</nuxt-link></p>
+          <p v-else>上一篇：<nuxt-link :to="{ name: 'id', params: { id: detail.articleInfor.prevLink.ID } }">{{ detail.articleInfor.prevLink.post_title }}</nuxt-link></p>
         </div>
         <div class="next">
           <p v-if="detail.articleInfor.nextLink === ''">已是最后一篇文章！</p>
-          <p v-else>下一篇：<nuxt-link :to="{ name: 'details-id', params: { id: detail.articleInfor.nextLink.ID } }">{{ detail.articleInfor.nextLink.post_title }}</nuxt-link></p>
+          <p v-else>下一篇：<nuxt-link :to="{ name: 'id', params: { id: detail.articleInfor.nextLink.ID } }">{{ detail.articleInfor.nextLink.post_title }}</nuxt-link></p>
         </div>
       </div>
       <!-- 切换结束 -->

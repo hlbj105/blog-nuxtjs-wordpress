@@ -37,8 +37,9 @@
           </ul>
           <!-- 版权文字 -->
           <div class="copyright-text" v-html="copyright"></div>
+          <span id="site-run-time">{{ siteRunTimeAllDay }}</span>
         </div>
-        <p class="right">Theme by <a href="https://www.xuanmo.xin">Xuanmo</a></p>
+        <p class="right">Theme by <a target="_blank" href="https://www.xuanmo.xin">Xuanmo</a></p>
       </div>
     </div>
     <div class="back-top" ref="backTop" @click="backTop" :class="{ show: isShowBackTop }">
@@ -52,7 +53,9 @@ export default {
   name: 'AppFooter',
   data () {
     return {
-      isShowBackTop: false
+      isShowBackTop: false,
+      siteRunTimeAllDay: '',
+      setTimeout: null
     }
   },
   computed: {
@@ -66,10 +69,72 @@ export default {
     window.addEventListener('scroll', function () {
       self.isShowBackTop = this.scrollY > 300
     })
+    this.countDown()
+  },
+  destroyed () {
+    clearTimeout(this.setTimeout)
   },
   methods: {
     backTop () {
       window.scrollTo(0, 0)
+    },
+    countDown () {
+      let seconds = 1000
+      let minutes = seconds * 60
+      let hours = minutes * 60
+      let days = hours * 24
+      let years = days * 365
+      const today = new Date()
+      let todayYear = today.getFullYear()
+      let todayMonth = today.getMonth()
+      let todayDate = today.getDate()
+      let todayHour = today.getHours()
+      let todayMinute = today.getMinutes()
+      let todaySecond = today.getSeconds()
+      /* 修改下面的t1数值为网站建成时间（年，月，日，时，分，秒） */
+      let t1 = Date.UTC(2013, 11, 9, 0, 0, 0)
+      let t2 = Date.UTC(
+        todayYear,
+        todayMonth,
+        todayDate,
+        todayHour,
+        todayMinute,
+        todaySecond
+      )
+      let diff = t2 - t1
+      let diffYears = Math.floor(diff / years)
+      let diffDays = Math.floor(diff / days - diffYears * 365)
+      let diffDaysAll = Math.floor(diff / days)
+      let diffHours = Math.floor(
+        (diff - (diffYears * 365 + diffDays) * days) / hours
+      )
+      let diffMinutes = Math.floor(
+        (diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+          minutes
+      )
+      let diffSeconds = Math.floor(
+        (diff -
+          (diffYears * 365 + diffDays) * days -
+          diffHours * hours -
+          diffMinutes * minutes) /
+          seconds
+      )
+      if (diffHours < 10) {
+        diffHours = '0' + diffHours
+      }
+      if (diffMinutes < 10) {
+        diffMinutes = '0' + diffMinutes
+      }
+      if (diffSeconds < 10) {
+        diffSeconds = '0' + diffSeconds
+      }
+
+      // let siteRunTime = `网站稳定运行 : ${diffYears}年 零 ${diffDays}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
+      this.siteRunTimeAllDay = `网站稳定运行 : ${diffDaysAll}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
+
+      this.setTimeout = setTimeout(() => {
+        this.countDown()
+      }, 1000)
     }
   }
 }
