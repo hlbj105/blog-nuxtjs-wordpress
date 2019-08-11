@@ -103,7 +103,7 @@
         </template>
         <div class="list-header">
           <a :name="`comment-${item.id}`"></a>
-          <a :href="item.author_url" target="_blank" class="author">{{ item.author_name }}</a>
+          <a rel="nofollow" :href="item.author_url" target="_blank" class="author">{{ item.author_name }}</a>
           <!-- 评论者等级 -->
           <span
             class="icon-vip icon-level"
