@@ -1,3 +1,4 @@
+const axios = require('axios');
 export default {
   mode: 'universal',
 
@@ -55,7 +56,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    '@nuxtjs/sitemap'
   ],
 
   axios: {
@@ -87,5 +89,88 @@ export default {
 
   env: {
     baseUrl: '/api'
+  },
+
+  sitemap: {
+    path: '/sitemap.xml', // sitemap名稱，不用改
+    hostname: 'https://xn--nf1a578axkh.xn--fiqs8s/', // 網址
+    cacheTime: 1000 * 60 * 60 * 24, // 站點路由更新頻率，只在 generate: false有用
+    gzip: true, // 生成 .xml.gz 檔的 sitemap
+    generate: false, // 允許使用 nuxt generate 生成
+    // 排除不要的頁面路由
+    exclude: [
+      '/404'
+    ],
+    // 靜態頁面路徑
+    routes (callback) {
+      axios.all([
+        // blog 分类
+        axios.get('https://blog.huangliangbo.com/wp-json/xm-blog/v1/menu'),
+        // 文章列表
+        axios.get('https://blog.huangliangbo.com/wp-json/wp/v2/posts', {
+          params: {
+            page: 1,
+            per_page: 100,
+            _embed: true
+          },
+          data: { progress: false }
+        }),
+        // 标签
+        axios.get('https://blog.huangliangbo.com/wp-json/xm-blog/v1/info')
+
+      ]).then(axios.spread(function (menu, posts, info) {
+        let now = new Date();
+        now.setHours(now.getHours(), now.getMinutes() - now.getTimezoneOffset());
+        let indexRoutes = [
+          {
+            url: '/',
+            changefreq: 'daily',
+            priority: 1,
+            lastmodISO: now.toISOString()
+          }
+        ]
+        let menuRoutes = menu.data.mainMenu.map((data) => {
+          let url = ''
+          if (data.object === 'category') {
+            url = '/category/1?type=' + data.object_id + '&title=' + data.title
+          }
+          if (data.object === 'page') {
+            url = '/page/' + data.object_id
+          }
+          if (data.object === 'post_tag') {
+            url = '/tags/1?type=' + data.term_id + '&title=' + data.name
+          }
+          if (data.object === 'custom') {
+            url = data.url
+          }
+          return {
+            url: url,
+            changefreq: 'monthly',
+            priority: 0.8,
+            lastmodISO: data.post_modified
+          }
+        });
+        let postsRoutes = posts.data.map((data) => {
+          return {
+            url: '/' + data.id,
+            changefreq: 'daily',
+            priority: 0.9,
+            lastmodISO: data.modified
+          }
+        });
+        let tagsRoutes = info.data.tagCloud.map((data) => {
+          return {
+            url: `/tags/1?type=${data.term_id}&title=${data.name}`,
+            changefreq: 'weekly',
+            priority: 0.7,
+            lastmodISO: now
+          }
+        })
+        // 用 concat 進行合併
+        callback(null, indexRoutes.concat(menuRoutes, postsRoutes, tagsRoutes));
+      }), function (err) {
+        throw (err);
+      });
+    }
   }
 }
