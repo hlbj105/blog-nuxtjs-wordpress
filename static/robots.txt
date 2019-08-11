@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /404
+Sitemap: https://xn--nf1a578axkh.xn--fiqs8s/sitemap.xml
