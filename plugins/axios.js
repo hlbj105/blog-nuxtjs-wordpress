@@ -1,3 +1,10 @@
+/*
+ * @Author: hlb
+ * @Date: 2019-10-19 14:58:00
+ * @LastEditors: hlb
+ * @LastEditTime: 2019-10-19 15:50:57
+ * @Description: axios
+ */
 export default function ({ $axios, redirect }) {
   $axios.onRequest(config => {
     if (config.method === 'get') {
