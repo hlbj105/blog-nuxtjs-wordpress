@@ -1,3 +1,10 @@
+/*
+ * @Author: hlb
+ * @Date: 2019-10-19 15:55:57
+ * @LastEditors: hlb
+ * @LastEditTime: 2019-10-19 17:14:56
+ * @Description: file content
+ */
 const axios = require('axios');
 export default {
   mode: 'universal',
