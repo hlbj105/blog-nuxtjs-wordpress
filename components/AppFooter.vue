@@ -172,7 +172,7 @@ export default {
     flex: auto;
   }
 
-  /deep/ a {
+  >>> a {
     display: block;
     margin-right: $container-margin;
     font-size: $font-size-large;

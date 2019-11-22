@@ -79,11 +79,11 @@ export default {
   .content-details {
     line-height: 2;
 
-    /deep/ a {
+    >>> a {
       color: $color-theme;
     }
 
-    /deep/ h2{
+    >>> h2{
       margin-top: 10px;
 
       .iconfont {
@@ -91,18 +91,18 @@ export default {
       }
     }
 
-    /deep/ h1,
-    /deep/ h2{
+    >>> h1,
+    >>> h2{
       font-size: $font-size-large;
     }
 
-    /deep/ h4,
-    /deep/ h5,
-    /deep/ h6{
+    >>> h4,
+    >>> h5,
+    >>> h6{
       font-size: $font-size-small;
     }
 
-    /deep/ img {
+    >>> img {
       height: auto !important;
       box-shadow: 0 0 10px #d2d2d2;
     }

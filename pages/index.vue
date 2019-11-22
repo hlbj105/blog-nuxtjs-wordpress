@@ -172,12 +172,12 @@ export default {
       color: #fff;
     }
 
-    /deep/ .el-carousel__arrow {
+    >>> .el-carousel__arrow {
       background-color: transparent;
       font-size: 30px;
     }
 
-    /deep/ .el-carousel__indicators--horizontal {
+    >>> .el-carousel__indicators--horizontal {
       bottom: 20px;
     }
   }
@@ -263,7 +263,7 @@ export default {
     }
 
     &.style-2 {
-      /deep/ .el-carousel__arrow {
+      >>> .el-carousel__arrow {
         display: block !important;
       }
     }
@@ -324,7 +324,7 @@ export default {
   }
 
   // 翻页
-  /deep/ .el-pagination {
+  >>> .el-pagination {
     .el-pagination__jump {
       display: none;
     }
