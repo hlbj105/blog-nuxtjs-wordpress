@@ -50,7 +50,13 @@ export const actions = {
         data: { progress: false }
       })
       data.map(item => {
-        item.userAgent = getBrowserInfo(item.userAgentInfo.userAgent)
+        if (item.userAgentInfo.userAgent) {
+          item.userAgent = getBrowserInfo(item.userAgentInfo.userAgent)
+        } else {
+          item.userAgent = {
+            browserEnName: 'undefined'
+          }
+        }
       })
       commit(SET_COMMENT_LIST, data)
       commit(SET_COMMENT_TOTAL, +headers['x-wp-totalpages'])
