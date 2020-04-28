@@ -327,6 +327,7 @@ body {
 
   .thumbnail-wrap {
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   // 缩略图
@@ -341,6 +342,7 @@ body {
   .list-content {
     flex: 1;
     position: relative;
+    overflow: hidden;
     margin-left: 15px;
   }
 

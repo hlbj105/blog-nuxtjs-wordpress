@@ -62,7 +62,7 @@
         <div class="list-content">
           <h2 class="title">
             <span class="classify" v-html="item.articleInfor.classify[0].name"></span>
-            <nuxt-link :to="{ name: 'id', params: { id: item.id } }" class="vertical-middle" v-html="item.title.rendered"></nuxt-link>
+            <nuxt-link :title="item.title.rendered" :to="{ name: 'id', params: { id: item.id } }" class="vertical-middle" v-html="item.title.rendered"></nuxt-link>
           </h2>
           <p class="summary">{{ item.articleInfor.summary }}</p>
           <div class="opeartion">

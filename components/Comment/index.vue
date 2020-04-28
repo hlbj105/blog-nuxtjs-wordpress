@@ -144,9 +144,9 @@
           />
           <p class="inline-block system-wrap">
             <!-- 浏览器logo -->
-            <span
-              :class="['browser-info', item.userAgent.browserEnName.toLowerCase()]"
-            >{{ item.userAgent.browserName }} {{ item.userAgent.browserVersion }}</span>
+            <span :class="['browser-info', item.userAgent.browserEnName && item.userAgent.browserEnName.toLowerCase()]">
+              {{ item.userAgent.browserName }} {{ item.userAgent.browserVersion }}
+            </span>
             <!-- 系统logo -->
             <span
               class="system-info"
