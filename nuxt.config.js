@@ -2,7 +2,7 @@
  * @Author: hlb
  * @Date: 2019-10-19 15:55:57
  * @LastEditors: hlb
- * @LastEditTime: 2019-10-19 17:14:56
+ * @LastEditTime: 2020-04-30 09:55:53
  * @Description: file content
  */
 const axios = require('axios');
@@ -17,10 +17,12 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
+      { rel: 'stylesheet', href: 'https://blog.huangliangbo.com/wp-includes/css/dist/block-library/style.min.css' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { hid: 'prism', rel: 'stylesheet', href: '/css/prism.css' }
     ],
     script: [
+      { src: 'https://blog.huangliangbo.com/wp-includes/js/comment-reply.min.js' },
       { src: '//at.alicdn.com/t/font_556506_8c5mvyqjye4.js' },
       { src: '/js/prism.js' },
       // 百度主推文章收录用
