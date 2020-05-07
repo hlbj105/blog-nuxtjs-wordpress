@@ -317,11 +317,11 @@ export default {
     line-height: 2;
     word-break: break-all;
 
-    >>> a {
+    ::v-deep a {
       color: $color-theme;
     }
 
-    >>> h2{
+    ::v-deep h2{
       margin-top: 10px;
 
       .iconfont {
@@ -329,18 +329,18 @@ export default {
       }
     }
 
-    >>> h1,
-    >>> h2{
+    ::v-deep h1,
+    ::v-deep h2{
       font-size: $font-size-large;
     }
 
-    >>> h4,
-    >>> h5,
-    >>> h6{
+    ::v-deep h4,
+    ::v-deep h5,
+    ::v-deep h6{
       font-size: $font-size-small;
     }
 
-    >>> img {
+    ::v-deep img {
       height: auto !important;
       box-shadow: 0 0 10px #d2d2d2;
     }
@@ -467,7 +467,7 @@ export default {
 }
 
 // 代码高亮
->>> div.code-toolbar {
+::v-deep div.code-toolbar {
   overflow: hidden;
   width: 100%;
   margin: 20px 0;

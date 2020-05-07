@@ -1,3 +1,10 @@
+<!--
+ * @Autor: hlb
+ * @Date: 2020-04-28 10:41:40
+ * @LastEditors: hlb
+ * @LastEditTime: 2020-05-07 14:31:41
+ * @description: file content
+ -->
 <template>
   <div id="app">
     <div :class="['menu-mask', menuStatus && 'is-show-menu']" @click="_closeMenu"></div>
@@ -56,7 +63,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   .wrap {
     .content {
       width: 100%;

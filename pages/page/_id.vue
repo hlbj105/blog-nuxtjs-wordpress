@@ -79,11 +79,11 @@ export default {
   .content-details {
     line-height: 2;
 
-    >>> a {
+    ::v-deep a {
       color: $color-theme;
     }
 
-    >>> h2{
+    ::v-deep h2{
       margin-top: 10px;
 
       .iconfont {
@@ -91,18 +91,18 @@ export default {
       }
     }
 
-    >>> h1,
-    >>> h2{
+    ::v-deep h1,
+    ::v-deep h2{
       font-size: $font-size-large;
     }
 
-    >>> h4,
-    >>> h5,
-    >>> h6{
+    ::v-deep h4,
+    ::v-deep h5,
+    ::v-deep h6{
       font-size: $font-size-small;
     }
 
-    >>> img {
+    ::v-deep img {
       height: auto !important;
       box-shadow: 0 0 10px #d2d2d2;
     }

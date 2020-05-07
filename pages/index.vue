@@ -172,12 +172,12 @@ export default {
       color: #fff;
     }
 
-    >>> .el-carousel__arrow {
+    ::v-deep .el-carousel__arrow {
       background-color: transparent;
       font-size: 30px;
     }
 
-    >>> .el-carousel__indicators--horizontal {
+    ::v-deep .el-carousel__indicators--horizontal {
       bottom: 20px;
     }
   }
@@ -263,7 +263,7 @@ export default {
     }
 
     &.style-2 {
-      >>> .el-carousel__arrow {
+      ::v-deep .el-carousel__arrow {
         display: block !important;
       }
     }
@@ -312,7 +312,7 @@ export default {
 
     .thumbnail-wrap {
       width: 100%;
-      margin-right: 0;
+      // margin-right: 0;
       text-align: center;
 
       .thumbnail {
@@ -324,7 +324,7 @@ export default {
   }
 
   // 翻页
-  >>> .el-pagination {
+   ::v-deep .el-pagination {
     .el-pagination__jump {
       display: none;
     }

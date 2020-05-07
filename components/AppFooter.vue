@@ -172,7 +172,7 @@ export default {
     flex: auto;
   }
 
-  >>> a {
+  ::v-deep a {
     display: block;
     margin-right: $container-margin;
     font-size: $font-size-large;

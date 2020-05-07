@@ -126,7 +126,7 @@ export default {
 
     .thumbnail-wrap {
       width: 100%;
-      margin-right: 0;
+      // margin-right: 0;
       text-align: center;
 
       .thumbnail {
@@ -138,7 +138,7 @@ export default {
   }
 
   // 翻页
-  >>> .el-pagination {
+  ::v-deep .el-pagination {
     .el-pagination__jump {
       display: none;
     }
