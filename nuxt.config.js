@@ -2,7 +2,7 @@
  * @Author: hlb
  * @Date: 2019-10-19 15:55:57
  * @LastEditors: hlb
- * @LastEditTime: 2020-04-30 09:55:53
+ * @LastEditTime: 2020-06-28 20:10:06
  * @Description: file content
  */
 const axios = require('axios');
@@ -28,7 +28,7 @@ export default {
       // 百度主推文章收录用
       { src: 'https://zz.bdstatic.com/linksubmit/push.js' },
       // 加入百度统计js，使用时自行添加为自己的
-      { src: 'https://hm.baidu.com/hm.js?ed39b2fcb397fae01afebcfc68c6e903' }
+      { src: 'https://hm.baidu.com/hm.js?218865cc9b0917378dd4e17ad27fde22' }
     ]
   },
 
@@ -96,7 +96,7 @@ export default {
 
   sitemap: {
     path: '/sitemap.xml', // sitemap名稱，不用改
-    hostname: 'https://xn--nf1a578axkh.xn--fiqs8s/', // 網址
+    hostname: 'https://huangliangbo.com/', // 網址
     cacheTime: 1000 * 60 * 60 * 24, // 站點路由更新頻率，只在 generate: false有用
     gzip: true, // 生成 .xml.gz 檔的 sitemap
     generate: false, // 允許使用 nuxt generate 生成
