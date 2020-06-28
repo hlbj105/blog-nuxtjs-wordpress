@@ -312,21 +312,17 @@ export default {
 
     // 验证码
     _randomCode () {
-      let canvas = document.querySelector('.canvas-img-code');
-      let ctx = canvas.getContext('2d');
-      let nRandom1 = Math.floor(Math.random() * 10 + 5);
-      let nRandom2 = Math.floor(Math.random() * 5);
-      let nRandomResult = Math.floor(Math.random() * 3);
-      let aOperator = ['+', '-', '*'];
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.font = '40px Microsoft Yahei';
-      ctx.fillStyle = '#333';
-      ctx.textAlign = 'center';
-      ctx.fillText(
-        `${nRandom1} ${aOperator[nRandomResult]} ${nRandom2} = ?`,
-        120,
-        50
-      );
+      const canvas = document.querySelector('.canvas-img-code')
+      const ctx = canvas.getContext('2d')
+      const nRandom1 = Math.floor(Math.random() * 10 + 5)
+      const nRandom2 = Math.floor(Math.random() * 5)
+      const nRandomResult = Math.floor(Math.random() * 3)
+      const aOperator = ['+', '-', '*']
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.font = '40px Microsoft Yahei'
+      ctx.fillStyle = '#333'
+      ctx.textAlign = 'center'
+      ctx.fillText(`${nRandom1} ${aOperator[nRandomResult]} ${nRandom2} = ?`, 120, 50)
       this.random = {
         nRandom1,
         nRandom2,
@@ -376,8 +372,8 @@ export default {
         this.imgCode.validate = true;
         this.imgCode.msg = '请输入验证码！';
       } else {
-        let _randomCode = this.random;
-        let result = 0;
+        const _randomCode = this.random
+        let result = 0
         switch (_randomCode.operator) {
           case '+':
             result = _randomCode.nRandom1 + _randomCode.nRandom2;
@@ -422,7 +418,7 @@ export default {
           })
         );
         try {
-          let data = await this.updateComment({
+          const data = await this.updateComment({
             author_name: this.author.value,
             author_email: this.email.value,
             author_url: this.url.value,
@@ -496,7 +492,7 @@ export default {
         return;
       }
       try {
-        let data = await this.updateCommentOpinion({
+        const data = await this.updateCommentOpinion({
           id,
           type
         });
