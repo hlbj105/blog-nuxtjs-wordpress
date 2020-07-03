@@ -104,7 +104,7 @@ export default {
       let diff = t2 - t1
       let diffYears = Math.floor(diff / years)
       let diffDays = Math.floor(diff / days - diffYears * 365)
-      let diffDaysAll = Math.floor(diff / days)
+      // let diffDaysAll = Math.floor(diff / days)
       let diffHours = Math.floor(
         (diff - (diffYears * 365 + diffDays) * days) / hours
       )
@@ -129,8 +129,9 @@ export default {
         diffSeconds = '0' + diffSeconds
       }
 
-      // let siteRunTime = `网站稳定运行 : ${diffYears}年 零 ${diffDays}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
-      this.siteRunTimeAllDay = `网站稳定运行 : ${diffDaysAll}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
+      let siteRunTime = `网站稳定运行 : ${diffYears}年 零 ${diffDays}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
+      // let siteRunTime = `网站稳定运行 : ${diffDaysAll}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
+      this.siteRunTimeAllDay = siteRunTime
 
       this.setTimeout = setTimeout(() => {
         this.countDown()
