@@ -564,9 +564,9 @@ function ludou_comment_mail_notify($comment_id, $comment_status)
         // 页面类型
         $pageType = '';
         if (get_post($comment->comment_post_ID)->post_type === 'post') {
-            $pageType = 'details';
+            $pageType = '';
         } elseif (get_post($comment->comment_post_ID)->post_type === 'page') {
-            $pageType = 'page';
+            $pageType = '/page';
         }
 
         // 邮件内容，自行修改，支持HTML
@@ -616,7 +616,7 @@ function ludou_comment_mail_notify($comment_id, $comment_status)
 
               <div class="comment-content">' . xm_output_smiley($comment->comment_content) . '</div>
 
-              <p>您也可移步到文章<a style="text-decoration:none; color:#1890ff" href="' . get_option('xm_vue_options')['domain'] . '/' . $pageType . '/' . $comment->comment_post_ID . '"> 《' . get_the_title($comment->comment_post_ID) . '》 </a>查看完整回复内容</p>
+              <p>您也可移步到文章<a style="text-decoration:none; color:#1890ff" href="' . get_option('xm_vue_options')['domain'] . $pageType . '/' . $comment->comment_post_ID . '"> 《' . get_the_title($comment->comment_post_ID) . '》 </a>查看完整回复内容</p>
 
               <p style="padding-bottom: 10px; border-bottom: 1px dashed #ccc;">欢迎再次光临 <a style="text-decoration:none; color:#1890ff" href="' . get_option('xm_vue_options')['domain'] . '">' . get_option('blogname') . '</a></p>
 
