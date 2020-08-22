@@ -2,7 +2,7 @@
  * @Author: hlb
  * @Date: 2019-10-19 15:55:57
  * @LastEditors: hlb
- * @LastEditTime: 2020-06-28 20:10:06
+ * @LastEditTime: 2020-08-22 15:14:03
  * @Description: file content
  */
 const axios = require('axios');
@@ -122,9 +122,9 @@ export default {
         axios.get('https://blog.huangliangbo.com/wp-json/xm-blog/v1/info')
 
       ]).then(axios.spread(function (menu, posts, info) {
-        let now = new Date();
+        const now = new Date();
         now.setHours(now.getHours(), now.getMinutes() - now.getTimezoneOffset());
-        let indexRoutes = [
+        const indexRoutes = [
           {
             url: '/',
             changefreq: 'daily',
@@ -132,7 +132,7 @@ export default {
             lastmodISO: now.toISOString()
           }
         ]
-        let menuRoutes = menu.data.mainMenu.map((data) => {
+        const menuRoutes = menu.data.mainMenu.map((data) => {
           let url = ''
           if (data.object === 'category') {
             url = '/category/1?type=' + data.object_id + '&title=' + data.title
@@ -153,7 +153,7 @@ export default {
             lastmodISO: data.post_modified
           }
         });
-        let postsRoutes = posts.data.map((data) => {
+        const postsRoutes = posts.data.map((data) => {
           return {
             url: '/' + data.id,
             changefreq: 'daily',
@@ -161,7 +161,7 @@ export default {
             lastmodISO: data.modified
           }
         });
-        let tagsRoutes = info.data.tagCloud.map((data) => {
+        const tagsRoutes = info.data.tagCloud.map((data) => {
           return {
             url: `/tags/1?type=${data.term_id}&title=${data.name}`,
             changefreq: 'weekly',

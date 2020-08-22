@@ -56,7 +56,7 @@
         <li class="list">最新文章</li>
       </ul>
       <article class="article-list" v-for="item in articleList" :key="item.key">
-        <nuxt-link :to="{ name: 'id', params: { id: item.id } }" class="thumbnail-wrap">
+        <nuxt-link v-if="item.articleInfor.thumbnail" :to="{ name: 'id', params: { id: item.id } }" class="thumbnail-wrap">
           <img :src="item.articleInfor.thumbnail" class="thumbnail" alt="">
         </nuxt-link>
         <div class="list-content">
@@ -99,7 +99,7 @@ export default {
     store.commit('article/SET_CURRENT_PAGE', 1)
     return store.dispatch('article/getArticleList', {
       page: 1,
-      per_page: 8,
+      per_page: 9,
       _embed: true
     })
   },

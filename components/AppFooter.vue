@@ -79,21 +79,21 @@ export default {
       window.scrollTo(0, 0)
     },
     countDown () {
-      let seconds = 1000
-      let minutes = seconds * 60
-      let hours = minutes * 60
-      let days = hours * 24
-      let years = days * 365
+      const seconds = 1000
+      const minutes = seconds * 60
+      const hours = minutes * 60
+      const days = hours * 24
+      const years = days * 365
       const today = new Date()
-      let todayYear = today.getFullYear()
-      let todayMonth = today.getMonth()
-      let todayDate = today.getDate()
-      let todayHour = today.getHours()
-      let todayMinute = today.getMinutes()
-      let todaySecond = today.getSeconds()
+      const todayYear = today.getFullYear()
+      const todayMonth = today.getMonth()
+      const todayDate = today.getDate()
+      const todayHour = today.getHours()
+      const todayMinute = today.getMinutes()
+      const todaySecond = today.getSeconds()
       /* 修改下面的t1数值为网站建成时间（年，月，日，时，分，秒） */
-      let t1 = Date.UTC(2013, 11, 9, 0, 0, 0)
-      let t2 = Date.UTC(
+      const t1 = Date.UTC(2013, 11, 9, 0, 0, 0)
+      const t2 = Date.UTC(
         todayYear,
         todayMonth,
         todayDate,
@@ -101,9 +101,9 @@ export default {
         todayMinute,
         todaySecond
       )
-      let diff = t2 - t1
-      let diffYears = Math.floor(diff / years)
-      let diffDays = Math.floor(diff / days - diffYears * 365)
+      const diff = t2 - t1
+      const diffYears = Math.floor(diff / years)
+      const diffDays = Math.floor(diff / days - diffYears * 365)
       // let diffDaysAll = Math.floor(diff / days)
       let diffHours = Math.floor(
         (diff - (diffYears * 365 + diffDays) * days) / hours
@@ -129,7 +129,7 @@ export default {
         diffSeconds = '0' + diffSeconds
       }
 
-      let siteRunTime = `网站稳定运行 : ${diffYears}年 零 ${diffDays}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
+      const siteRunTime = `网站稳定运行 : ${diffYears}年 零 ${diffDays}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
       // let siteRunTime = `网站稳定运行 : ${diffDaysAll}天 ${diffHours} 小时 ${diffMinutes} 分钟 ${diffSeconds} 秒`
       this.siteRunTimeAllDay = siteRunTime
 

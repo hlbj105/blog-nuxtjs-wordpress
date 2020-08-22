@@ -1,3 +1,10 @@
+<!--
+ * @Autor: hlb
+ * @Date: 1970-01-01 08:00:00
+ * @LastEditors: hlb
+ * @LastEditTime: 2020-08-22 15:08:21
+ * @description: file content
+-->
 <template>
   <div>
     <!-- 公告栏 -->
@@ -41,11 +48,11 @@
         </p>
       </div>
       <ul class="content">
-        <li class="list">标签：{{ sidebar.getAllCountTag }}个</li>
         <li class="list">文章：{{ sidebar.getAllCountArticle }}篇</li>
-        <li class="list">页面：{{ sidebar.getAllCountPage }}个</li>
         <li class="list">评论：{{ sidebar.getAllCountComment }}条</li>
         <li class="list">分类：{{ sidebar.getAllCountCat }}个</li>
+        <li class="list">页面：{{ sidebar.getAllCountPage }}个</li>
+        <li class="list">标签：{{ sidebar.getAllCountTag }}个</li>
         <li class="list">最后更新：{{ sidebar.lastUpDate }}</li>
       </ul>
     </div>
