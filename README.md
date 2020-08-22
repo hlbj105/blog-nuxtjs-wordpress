@@ -1,4 +1,12 @@
-# xm-nuxt-wordpress
+<!--
+ * @Autor: hlb
+ * @Date: 1970-01-01 08:00:00
+ * @LastEditors: hlb
+ * @LastEditTime: 2020-08-22 15:19:10
+ * @description: README
+-->
+# blog-nuxtjs-wordpress
+> 基于 xm-nuxt-wordpress 二次修改版
 
 > 使用[Nuxtjs](https://nuxtjs.org) + [Wordpress Rest Api](https://developer.wordpress.org/rest-api/)实现前后端分离，服务端渲染页面
 
@@ -10,11 +18,11 @@
 
 > 原创不易，希望能够保留右下角的主题作者，谢谢
 
-> 微信小程序版：[https://github.com/xuanmos/blog-miniprogram-wordpress](https://github.com/xuanmos/blog-miniprogram-wordpress)
+> 微信小程序版：[https://github.com/hlbj105/blog-miniprogram-wordpress](https://github.com/hlbj105/blog-miniprogram-wordpress)
 
 ## 微信小程序版
 
-![](https://upyun.xuanmo.xin/3490/20200622175708.jpg)
+![](https://cdn.huangliangbo.com/wp-content/uploads/2020/07/1593741587-qrcode.jpg)
 
 ## 主题设置截图
 
