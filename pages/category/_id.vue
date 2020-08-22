@@ -28,7 +28,7 @@
     <!-- more btn start -->
     <el-pagination
       small
-      :page-size="8"
+      :page-size="12"
       layout="prev, pager, next, jumper"
       :current-page="currentPage"
       @current-change="_changePagination"
@@ -48,7 +48,7 @@ export default {
     return store.dispatch('article/getArticleList', {
       categories: query.type,
       page: params.id,
-      per_page: 8,
+      per_page: 12,
       _embed: true
     })
   },

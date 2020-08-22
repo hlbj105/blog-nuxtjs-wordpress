@@ -79,7 +79,7 @@
       <!-- more btn start -->
       <el-pagination
         small
-        :page-size="8"
+        :page-size="10"
         layout="prev, pager, next, jumper"
         :current-page="currentPage"
         @current-change="_changePagination"
@@ -99,7 +99,7 @@ export default {
     store.commit('article/SET_CURRENT_PAGE', 1)
     return store.dispatch('article/getArticleList', {
       page: 1,
-      per_page: 9,
+      per_page: 10,
       _embed: true
     })
   },
@@ -200,6 +200,7 @@ export default {
     vertical-align: top;
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   .list {

@@ -27,7 +27,7 @@
     <!-- more btn start -->
     <el-pagination
       small
-      :page-size="8"
+      :page-size="12"
       layout="prev, pager, next, jumper"
       :current-page="currentPage"
       @current-change="_changePagination"
@@ -45,7 +45,7 @@ export default {
     store.commit('article/SET_CURRENT_PAGE', +params.id)
     return store.dispatch('article/getArticleList', {
       page: params.id,
-      per_page: 8,
+      per_page: 12,
       _embed: true
     })
   },
