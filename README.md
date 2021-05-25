@@ -8,7 +8,7 @@
 -->
 # Nuxt.js + WordPress
 
-## 本仓库不再更新，请移步https://gitee.com/hlbj105/blog-nuxtjs-wordpress，github国内太慢了，还经常打不开！
+## 本仓库不再更新，请移步[https://gitee.com/hlbj105/blog-nuxtjs-wordpress](https://gitee.com/hlbj105/blog-nuxtjs-wordpress) ，github国内太慢了，还经常打不开！
 
 ## 主题特色
 
