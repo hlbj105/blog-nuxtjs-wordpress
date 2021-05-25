@@ -8,6 +8,8 @@
 -->
 # Nuxt.js + WordPress
 
+## 本仓库不再更新，请移步https://gitee.com/hlbj105/blog-nuxtjs-wordpress，github国内太慢了，还经常打不开！
+
 ## 主题特色
 
 1. 使用[Nuxtjs](https://nuxtjs.org) + [Wordpress Rest Api](https://developer.wordpress.org/rest-api/) 实现前后端分离，可完成多端部署；
