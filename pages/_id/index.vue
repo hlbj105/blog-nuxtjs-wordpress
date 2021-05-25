@@ -8,7 +8,7 @@
           <span class="author">
             <x-icon type="icon-about"></x-icon>{{ detail.articleInfor.author }}
           </span>
-          <time class="time m-l-5px">
+          <time class="time m-l-5px keep-all">
             <x-icon type="icon-date"></x-icon>{{ detail.date }}
           </time>
         </p>
@@ -50,7 +50,7 @@
       <!-- 点赞结束 -->
 
       <!-- 分享开始 -->
-      <div class="share text-center">
+      <div class="share align-center">
         <span class="text">分享到：</span>
         <a :href="`https://connect.qq.com/widget/shareqq/index.html?url=${info.domain}/details/${$route.params.id}&title=${detail.title.rendered}&summary=`" target="_blank">
           <svg-icon iconName="#icon-QQ"></svg-icon>
@@ -68,7 +68,7 @@
       <!-- 分享结束 -->
 
       <!-- 标签开始 -->
-      <div class="tag-wrap text-center">
+      <div class="tag-wrap align-center">
         <x-icon type="icon-tag" v-show="detail.articleInfor.tags.length"></x-icon>
         <span v-for="(item, index) in detail.articleInfor.tags" :key="item.key" v-html="index === detail.articleInfor.tags.length - 1 ? item.name : `${item.name}、`"></span>
       </div>
@@ -283,7 +283,7 @@ export default {
 .section {
   margin-top: $container-margin;
   padding: $container-padding;
-  background: $color-white;
+  background: var(--color-sub-background);
   border-radius: $border-radius;
 }
 
@@ -303,9 +303,9 @@ export default {
     align-items: center;
     margin-bottom: 10px;
     padding-bottom: 5px;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid var(--color-border);
     text-align: center;
-    color: $color-sub-text;
+    color: var(--color-sub-text);
 
     .iconfont {
       vertical-align: baseline;
@@ -413,7 +413,7 @@ export default {
     align-items: center;
     margin-bottom: 5px;
     padding-bottom: 5px;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .reward {
@@ -446,7 +446,7 @@ export default {
     margin-bottom: 5px;
     padding: 5px;
     border-radius: $border-radius;
-    background: $color-sub-background;
+    background: var(--color-sub-background);
     font-size: $font-size-small;
   }
 
@@ -461,7 +461,7 @@ export default {
   margin-bottom: 10px;
   padding: 10px 0;
   border-radius: $border-radius;
-  background: $color-sub-background;
+  background: var(--color-sub-background);
   font-size: $font-size-large;
   text-align: center;
 }
@@ -479,7 +479,7 @@ export default {
     border: {
       width: 0 1px 1px;
       style: solid;
-      color: $color-main-background;
+      color: var(--color-main-background);
     }
   }
 
@@ -491,7 +491,7 @@ export default {
   }
 
   .line-numbers .line-numbers-rows {
-    border-color: $color-main-background;
+    border-color: var(--color-border);
   }
 
   .toolbar {

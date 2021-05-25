@@ -13,10 +13,10 @@
             <x-icon type="icon-loading"></x-icon>
             <p>&nbsp;海报生成中...</p>
           </div>
-          <div class="content-img-wrap text-center">
+          <div class="content-img-wrap align-center">
             <img :src="content.imgUrl" height="200">
             <div class="time">
-              <p class="day text-center">{{ content.time.replace(/(\d{4})-(\d{1,2})-(\d{1,2})/, '$3') }}</p>
+              <p class="day align-center">{{ content.time.replace(/(\d{4})-(\d{1,2})-(\d{1,2})/, '$3') }}</p>
               <p>{{ content.time.replace(/(\d{4})-(\d{1,2})-(\d{1,2})/, '$1/$2') }}</p>
             </div>
           </div>
@@ -35,7 +35,7 @@
         </div>
       </div>
       <!-- 右边分享 -->
-      <div class="poster-share text-center">
+      <div class="poster-share align-center">
         <h2 class="title">分享本文海报</h2>
         <div class="btn">
           <a :href="`https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=${$store.state.info.domain}/details/${$route.params.id}&title=${content.title}&summary=${content.summary}&pics=${poster}`" target="_blank">
@@ -163,7 +163,7 @@ $padding: 10px;
     width: 650px;
     height: 500px;
     padding: 20px;
-    background: #fff;
+    background: var(--color-sub-background);
     border-radius: $border-radius;
   }
 
@@ -181,7 +181,7 @@ $padding: 10px;
     width: 60%;
 
     &.is-border {
-      border: 1px solid $color-border;
+      border: 1px solid var(--color-border);
     }
 
     .create {
@@ -200,7 +200,7 @@ $padding: 10px;
       align-items: center;
       width: 100%;
       height: 100%;
-      background: #fff;
+      background: var(--color-sub-background);
       font-size: 18px;
 
       ::v-deep .iconfont {
@@ -222,7 +222,7 @@ $padding: 10px;
       }
 
       .day {
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid var(--color-border);
         font-size: 30px;
         letter-spacing: 4px;
       }
@@ -233,7 +233,7 @@ $padding: 10px;
       padding: 20px $padding 10px;
       overflow: hidden;
       font-size: 18px;
-      color: #333;
+      color: var(--color-main-text);
     }
 
     .summary {
@@ -249,7 +249,7 @@ $padding: 10px;
     height: 70px;
     margin-top: 10px;
     padding: 10px $padding;
-    border-top: 1px dashed $color-border;
+    border-top: 1px dashed var(--color-border);
 
     .left {
       flex: 1;

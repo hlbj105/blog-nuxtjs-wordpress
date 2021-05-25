@@ -1,7 +1,7 @@
 <template>
   <div class="comments-wrap">
     <!-- 发表评论 -->
-    <div v-if="commentStatus === 'closed'" class="comment-closed text-center f-s-large">评论已关闭</div>
+    <div v-if="commentStatus === 'closed'" class="comment-closed align-center f-s-large">评论已关闭</div>
     <div v-else-if="commentStatus === 'open'" class="comment-from">
       <h3 class="comment-title">发表评论</h3>
       <p class="comment-sub-title">
@@ -156,7 +156,7 @@
         </div>
         <div class="list-content" v-html="item.content.rendered"></div>
         <div class="list-footer">
-          <time>{{ item.date.replace('T', ' ') }}</time>
+          <time class="keep-all">{{ item.date.replace('T', ' ') }}</time>
           <div class="opinion">
             <span class="opinion-btn" @click="_updateCommentOpinion(item.id, 'good', index)">
               <x-icon type="icon-good"></x-icon>

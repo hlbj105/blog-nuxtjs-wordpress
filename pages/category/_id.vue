@@ -1,9 +1,17 @@
+<!--
+ * @Autor: Jason
+ * @Date: 2021-05-25 15:34:49
+ * @LastEditors: Jason
+ * @LastEditTime: 2021-05-25 15:34:49
+ * @FilePath: /pages/category/_id.vue
+ * @description: description
+-->
 <template>
-  <div class="container">
+  <div class="container article-list-wrap m-t-0px">
     <ul class="header">
       <li class="list">当前频道：{{ $route.query.title }}</li>
     </ul>
-    <div v-if="articleList.length === 0" class="not">暂无数据！</div>
+    <div v-if="articleList.length === 0" class="article-empty align-center m-t-20px">暂无数据！</div>
     <article v-else class="article-list" v-for="item in articleList" :key="item.key">
       <nuxt-link v-if="item.articleInfor.thumbnail" :to="{ name: 'id', params: { id: item.id } }" class="thumbnail-wrap">
         <img :src="item.articleInfor.thumbnail" class="thumbnail" alt="">
@@ -75,80 +83,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-// 文章列表
-.container {
-  padding: $container-padding;
-  background: $color-white;
-  border-radius: $border-radius;
-
-  .header {
-    padding-bottom: $container-padding;
-    border-bottom: 1px solid $color-main-background;
-    font-size: $font-size-large;
-  }
-
-  // 暂无数据
-  .not {
-    margin: 15px 0;
-    text-align: center;
-    color: $color-theme;
-  }
-}
-
-@media screen and (max-width:767px) {
-  // 文章列表
-  .container {
-    .article-list {
-      flex-wrap: wrap;
-      height: auto;
-
-      .title {
-        margin-top: 15px;
-        font-size: $font-size-large;
-      }
-
-      .summary {
-        height: auto;
-      }
-
-      .list-content {
-        height: auto;
-      }
-
-      .opeartion {
-        position: static;
-        display: block;
-        margin-top: 10px;
-      }
-
-      .details-btn {
-        display: block;
-        margin-top: 10px;
-        padding: 10px 0;
-        text-align: center;
-      }
-    }
-
-    .thumbnail-wrap {
-      width: 100%;
-      // margin-right: 0;
-      text-align: center;
-
-      .thumbnail {
-        width: auto;
-        height: auto;
-        max-height: 150px;
-      }
-    }
-  }
-
-  // 翻页
-  ::v-deep .el-pagination {
-    .el-pagination__jump {
-      display: none;
-    }
-  }
-}
-</style>

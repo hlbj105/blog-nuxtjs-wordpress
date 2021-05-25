@@ -40,7 +40,7 @@ export default {
 
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    './assets/scss/global.scss'
+    './assets/scss/index.scss'
   ],
 
   styleResources: {

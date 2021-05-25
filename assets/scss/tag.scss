@@ -1,5 +1,4 @@
 // 设置标签默认样式
-
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +24,13 @@ textarea {
   background: none;
 }
 
-li {
+ul,
+ol {
+  list-style-position: inside;
+}
+
+// 过滤文章正文中的 li 元素
+li:not(.content-details li) {
   list-style: none;
 }
 
@@ -39,7 +44,7 @@ img {
 a {
   text-decoration: none;
   transition: 0.5s;
-  color: $color-main-text;
+  color: var(--color-main-text);
 
   &:hover {
     color: $color-theme;
