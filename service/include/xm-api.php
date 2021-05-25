@@ -126,7 +126,7 @@ function add_get_blog_info()
     $latestComment = array();
     for ($i = 0; $i < count($newComment); $i++) {
         preg_match("/\d/", md5($newComment[$i]->comment_author_email), $matches);
-        $latestComment[$i]->avatar = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($newComment[$i]->comment_author_email))) . "?s=200";
+        $latestComment[$i]->avatar = "https://gravatar.loli.net/avatar/" . md5(strtolower(trim($newComment[$i]->comment_author_email))) . "?s=200";
         $latestComment[$i]->background = $colors[$matches[0]]; // 根据邮箱md5后获取第一个数字生成颜色
         $latestComment[$i]->countCom = get_comments_number($newComment[$i]->comment_post_ID);
         $latestComment[$i]->link = get_post_meta($newComment[$i]->comment_post_ID, "xm_post_link", true)["very_good"];
@@ -334,7 +334,7 @@ function add_api_comment_meta_field()
             $array = array(
                 "userAgent" => ($object[author_user_agent] ? $object[author_user_agent] : $result[0]->comment_agent),
                 "vipStyle" => get_author_class($author_email),
-                "author_avatar_urls" => "https://www.gravatar.com/avatar/" . md5(strtolower(trim($author_email))) . "?s=200",
+                "author_avatar_urls" => "https://gravatar.loli.net/avatar/" . md5(strtolower(trim($author_email))) . "?s=200",
                 "background" => $colors[$matches[0]] // 根据邮箱md5后获取第一个数字生成颜色
             );
             return $array;
